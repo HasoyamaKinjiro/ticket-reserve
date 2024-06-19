@@ -49,6 +49,7 @@ const OtherDays = ({ dates, isSelected, changeSelected }) => {
     const handleClick = (e) => {
         changeSelected(e);
         setButtonId(e.target.id);
+        setOtherDays(false);
         console.log("this moment should be rethink");
     };
 

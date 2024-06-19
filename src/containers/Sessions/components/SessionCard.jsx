@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import {
     Grid,
     Card,
@@ -6,8 +7,24 @@ import {
     CardContent,
     Typography,
     CardActions,
-    Button
+    Button,
+    Box
 } from "@mui/material";
+import SessionPopUp from "./SessionPopUp";
+
+const boxBlurStyles = {
+    width: "100vw",
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    background: "rgba(255, 255, 255, 0.5)",
+    backdropFilter: "blur(10px)",
+};
 
 const boxStyle = {
     width: "184px",
@@ -25,12 +42,22 @@ const buttonTimeStyle = {
     }
 };
 
+const portal = document.getElementById("session-popup-portal");
+
 const SessionCard = ({ movie }) => {
     const timeStamp = ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"];
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [popUpTime, setPopUpTime] = useState("");
 
-    const goToReservationPage = () => {
-        console.log("Coming soon")
+    const openPopUpReservation = (e) => {
+        setIsPopupOpen(true);
+        setPopUpTime(e.target.innerText);
     };
+
+    const closePopUpReservation = () => {
+        setIsPopupOpen(false);
+    };
+
 
     return (
         <>
@@ -66,7 +93,7 @@ const SessionCard = ({ movie }) => {
                                         <Button
                                             size="small"
                                             sx={buttonTimeStyle}
-                                            onClick={goToReservationPage}
+                                            onClick={(e) => openPopUpReservation(e)}
                                         >
                                             {time}
                                         </Button>
@@ -77,6 +104,15 @@ const SessionCard = ({ movie }) => {
                     </div>
                 </Card>
             </Grid>
+            {isPopupOpen && portal && createPortal(
+                <Box
+                    sx={boxBlurStyles}
+                    onClick={closePopUpReservation}
+                >
+                    <SessionPopUp movie={movie} time={popUpTime} close={closePopUpReservation}/>
+                </Box>,
+                portal
+            )}
         </>
     );
 };
