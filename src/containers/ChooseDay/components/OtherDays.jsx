@@ -1,45 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Box, List, ListItem, ListItemText } from "@mui/material";
-import DateButton from "./DateButton";
-
-const listStyles = {
-    width: "180px",
-    height: "276px",
-    marginTop: 1,
-    padding: 0,
-    position: "absolute",
-    right: 0,
-    border: "1px solid #ce93d8",
-    borderRadius: "4px",
-    overflowY: "auto",
-    zIndex: 1500,
-    "&::-webkit-scrollbar": {
-        width: "10px",
-        background: "white"
-    },
-    "&::-webkit-scrollbar-track": {
-        background: "#f1f1f1",
-        borderRadius: "10px"
-    },
-    "&::-webkit-scrollbar-thumb": {
-        background: "#ce93d8",
-        borderRadius: "10px",
-        border: "3px solid #f1f1f1"
-    },
-};
-
-const listItemStyles = {
-    padding: "8px 16px",
-    borderBottom: "1px solid #ce93d8",
-    cursor: "pointer",
-    background: 'white',
-    "&:hover": {
-        backgroundColor: "#e6c9ec"
-    },
-    '&:last-child': {
-        borderBottom: 'none'
-    }
-};
+import { DateButton } from "../../../components";
+import { listStyles, listItemStyles } from "../../../styled/ChooseDayStyles/OtherDaysStyles";
 
 const OtherDays = ({ dates, isSelected, changeSelected }) => {
     const [otherDays, setOtherDays] = useState(false);

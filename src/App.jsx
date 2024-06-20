@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress, Container, Typography } from "@mui/material";
-import "./App.css";
-import Header from "./components/Header";
+import { Header } from "./components";
 import MainPage from "./pages/MainPage";
 
 function App () {
@@ -40,11 +39,17 @@ function App () {
     }
 
     return (
-        <div className="App">
+        <div>
             <Header/>
             <Container
                 maxWidth="lg"
-                sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+                sx={{
+                    padding: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+
+                }}
             >
                 <MainPage movies={movies}/>
             </Container>

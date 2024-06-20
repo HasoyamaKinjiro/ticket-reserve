@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-
-const DateButtonStyle = (isFocused, sx) => ({
-    width: "140px",
-    height: "60px",
-    backgroundColor: isFocused && "#ce93d8",
-    "&:hover": {
-        backgroundColor: "#705275"
-    },
-    ...sx
-});
+import DateButtonStyles from "../../../styled/ChooseDayStyles/DateButtonStyles";
 
 const DateButton = ({ title, id, onClick, isSelected, sx }) => {
     const [isFocused, setIsFocused] = useState(false);
@@ -27,7 +18,7 @@ const DateButton = ({ title, id, onClick, isSelected, sx }) => {
             id={id}
             color="secondary"
             variant="contained"
-            sx={DateButtonStyle(isFocused, sx)}
+            sx={DateButtonStyles(isFocused, sx)}
             onClick={onClick}
         >
             {title}
