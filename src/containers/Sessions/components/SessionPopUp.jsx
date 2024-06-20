@@ -8,17 +8,13 @@ import {
     Typography
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import PopUpPlaceButton from "./popUpPlaceButton";
-
-const cardStyles = {
-    width: 1184,
-    height: 500,
-    padding: "0 24px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-around",
-    position: "relative"
-};
+import {
+    boxFilmInfo,
+    cardActionsPlaceBtns,
+    cardStyles,
+    iconBtnsPosition
+} from "../../../styled/SessionsStyles/SessionPopUpStyles";
+import { PopUpPlaceButton } from "../../../components";
 
 const SessionPopUp = ({ movie, close, time }) => {
     const places = [
@@ -43,18 +39,12 @@ const SessionPopUp = ({ movie, close, time }) => {
                 }}
             >
                 <CardMedia
-                    sx={{ height: 325, width: 200 }}
+                    sx={{ height: "var(--film-img-height)", width: "var(--film-img-width)" }}
                     image={movie.posterUrl}
                     title={movie.title}
                 />
                 <Box
-                    sx={{
-                        width: "50%",
-                        ml: 2,
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-evenly"
-                    }}
+                    sx={boxFilmInfo}
                 >
                     <Box>
                         <Typography>
@@ -75,15 +65,7 @@ const SessionPopUp = ({ movie, close, time }) => {
             <Box>
                 <Typography sx={{ ml: "8px", mb: 2 }}>Reservation time: {time}</Typography>
                 <CardActions
-                    sx={{
-                        padding: 0,
-                        display: "grid",
-                        gridTemplateColumns: "repeat(10, 1fr)",
-                        gridTemplateRows: "repeat(3, auto)",
-                        justifyItems: "end",
-                        gap: 1
-
-                    }}
+                    sx={cardActionsPlaceBtns}
                 >
                     {
                         places.map((place, index) => (
@@ -95,19 +77,11 @@ const SessionPopUp = ({ movie, close, time }) => {
             <Button
                 color="success"
                 variant="contained"
-                sx={{
-                    position: "absolute",
-                    bottom: 20,
-                    right: 24
-                }}
+                sx={iconBtnsPosition({ bottom: 20 })}
             >Reservation</Button>
             <IconButton
                 color="error"
-                sx={{
-                    position: "absolute",
-                    top: 20,
-                    right: 24
-                }}
+                sx={iconBtnsPosition({ top: 20 })}
                 title="close"
                 onClick={close}
             ><CloseIcon/></IconButton>
