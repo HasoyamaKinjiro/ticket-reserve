@@ -1,18 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { ThemeProvider, createTheme } from '@mui/material';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import GlobalStyles from "./GlobalStyles";
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom/dist";
+import { ThemeProvider, createTheme } from "@mui/material";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { GlobalStyles } from "./GlobalStyles";
 
 
 const theme = createTheme({
     palette: {
-        mode: 'dark',
+        mode: "dark",
         secondary: {
-            main: '#121212',
-            secondary: 'var(--primary-purple)'
-        },
+            main: "#121212",
+            secondary: "var(--primary-purple)"
+        }
     },
     breakpoints: {
         values: {
@@ -20,18 +23,22 @@ const theme = createTheme({
             sm: 820,
             md: 1260,
             lg: 1280,
-            xl: 1920,
+            xl: 1920
         }
     }
 })
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <>
-        <GlobalStyles />
-        <ThemeProvider theme={theme}>
-            <App />
-        </ThemeProvider>
+        <Provider store={store}>
+            <GlobalStyles/>
+            <ThemeProvider theme={theme}>
+                <Router>
+                    <App/>
+                </Router>
+            </ThemeProvider>
+        </Provider>
     </>
 );
 

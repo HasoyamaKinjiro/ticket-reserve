@@ -1,13 +1,13 @@
-import React from "react";
-import { AppBar, Toolbar, Typography, Icon } from "@mui/material";
-import { LocalActivity } from "@mui/icons-material";
-import { appBarStyles } from "../styled/HeaderStyles";
+import React from 'react';
+import { AppBar, Toolbar, Typography, Icon } from '@mui/material';
+import { LocalActivity } from '@mui/icons-material';
+import { appBarHeader, toolbarHeader, ticketIconHeader } from '../styled/HeaderStyles';
 
 const Header = () => (
-    <AppBar position="static" sx={appBarStyles}>
-        <Toolbar>
+    <AppBar position="static" sx={appBarHeader}>
+        <Toolbar sx={toolbarHeader}>
             <Typography variant="h6">Ticket reserve</Typography>
-            <Icon color="inherit" sx={{ ml: 1 }}>
+            <Icon color="inherit" sx={ticketIconHeader}>
                 <LocalActivity/>
             </Icon>
         </Toolbar>

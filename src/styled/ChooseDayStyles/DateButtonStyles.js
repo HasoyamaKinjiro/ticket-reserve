@@ -1,9 +1,11 @@
+import { globalColors, sizes } from '../../GlobalStyles';
+
 const DateButtonStyles = (isFocused, sx) => ({
-    width: "var(--date-button-width)",
-    height: "var(--date-button-height)",
-    backgroundColor: isFocused && "var(--primary-purple)",
-    "&:hover": {
-        backgroundColor: "var(--dark-secondary-purple)"
+    width: sizes.dateButton.width,
+    height: sizes.dateButton.height,
+    backgroundColor: isFocused && globalColors.primaryPurple,
+    '&:hover': {
+        backgroundColor: globalColors.secondaryPurple
     },
     ...sx
 });

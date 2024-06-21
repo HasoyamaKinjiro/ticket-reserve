@@ -1,15 +1,19 @@
-import Header from "./Header";
-import DateButton from "../containers/ChooseDay/components/DateButton";
-import OtherDays from "../containers/ChooseDay/components/OtherDays";
-import ChooseDay from "../containers/ChooseDay/ChooseDay";
-import PopUpPlaceButton from "../containers/Sessions/components/PopUpPlaceButton";
-import SessionCard from "../containers/Sessions/components/SessionCard";
-import SessionPopUp from "../containers/Sessions/components/SessionPopUp";
-import Sessions from "../containers/Sessions/Sessions";
+import Header from './Header';
+import Footer from './Footer';
+import GeneralLayout from './GeneralLayout';
+import DateButton from './DateButton';
+import OtherDays from './OtherDays';
+import ChooseDay from '../containers/ChooseDay/ChooseDay';
+import PopUpPlaceButton from './PopUpPlaceButton';
+import SessionCard from './SessionCard';
+import SessionPopUp from './SessionPopUp';
+import Sessions from '../containers/Sessions/Sessions';
 
 
 export {
     Header,
+    Footer,
+    GeneralLayout,
     DateButton,
     OtherDays,
     PopUpPlaceButton,

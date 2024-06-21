@@ -1,10 +1,12 @@
+import { sizes } from '../../GlobalStyles';
+
 const chooseDayContainer = (theme) => ({
-    mb: "var(--global-margin-bottom)",
-    display: "flex",
-    justifyContent: "space-between",
+    mb: sizes.globalMarginBottom,
+    display: 'flex',
+    justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
-        overflowX: "scroll",
-        padding: "0 4px"
+        overflowX: 'scroll',
+        padding: '0 4px'
     }
 });
 

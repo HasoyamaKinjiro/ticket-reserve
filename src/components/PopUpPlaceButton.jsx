@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Button, Tooltip } from "@mui/material";
-import PopUpPlaceButtonStyle from "../../../styled/SessionsStyles/PopUpPlaceButtonStyles";
+import React, { useState } from 'react';
+import { Button, Tooltip } from '@mui/material';
+import PopUpPlaceButtonStyle from '../styled/SessionsStyles/PopUpPlaceButtonStyles';
 
 const PopUpPlaceButton = ({ place }) => {
     const [isButtonFocused, setIsButtonFocused] = useState(false);

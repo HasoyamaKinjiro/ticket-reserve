@@ -1,43 +1,62 @@
+import { globalColors, sizes } from '../../GlobalStyles';
+
+const boxOtherDays = {
+    position: 'relative'
+};
+
+const dateButtonOtherDays = {
+    ml: '1px'
+};
+
 const listStyles = {
-    width: "var(--list-width)",
-    height: "var(--list-height)",
+    width: sizes.list.width,
+    height: sizes.list.height,
     marginTop: 1,
     padding: 0,
-    position: "absolute",
+    position: 'absolute',
     right: 0,
-    border: "1px solid var(--primary-purple)",
-    borderRadius: "4px",
-    overflowY: "auto",
+    border: `1px solid ${globalColors.primaryPurple}`,
+    borderRadius: '4px',
+    overflowY: 'auto',
     zIndex: 1500,
-    "&::-webkit-scrollbar": {
-        width: "10px",
-        background: "white"
+    '&::-webkit-scrollbar': {
+        width: '10px',
+        background: 'white'
     },
-    "&::-webkit-scrollbar-track": {
-        background: "var(--scrollbar-background)",
-        borderRadius: "10px"
+    '&::-webkit-scrollbar-track': {
+        background: globalColors.scrollbarBackground,
+        borderRadius: '10px'
     },
-    "&::-webkit-scrollbar-thumb": {
-        background: "var(--primary-purple)",
-        borderRadius: "10px",
-        border: "3px solid #f1f1f1"
-    },
+    '&::-webkit-scrollbar-thumb': {
+        background: globalColors.primaryPurple,
+        borderRadius: '10px',
+        border: `3px solid ${globalColors.scrollbarBackground}`
+    }
 };
 
 const listItemStyles = {
-    padding: "8px 16px",
-    borderBottom: "1px solid var(--primary-purple)",
-    cursor: "pointer",
+    padding: '8px 16px',
+    borderBottom: `1px solid ${globalColors.primaryPurple}`,
+    cursor: 'pointer',
     background: 'white',
-    "&:hover": {
-        backgroundColor: "var(--light-secondary-purple)"
+    '&:hover': {
+        backgroundColor: globalColors.lightSecondaryPurple
     },
     '&:last-child': {
         borderBottom: 'none'
     }
 };
 
+const primaryTypographyStylesOtherDays = {
+    sx: {
+        fontSize: '14px'
+    }
+};
+
 export {
+    boxOtherDays,
+    dateButtonOtherDays,
     listStyles,
-    listItemStyles
+    listItemStyles,
+    primaryTypographyStylesOtherDays
 }

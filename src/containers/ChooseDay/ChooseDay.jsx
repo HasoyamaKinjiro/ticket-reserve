@@ -1,23 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSelectedDay } from '../../store/chooseDay';
 import { format, addMonths, eachDayOfInterval } from 'date-fns';
-import { Container } from "@mui/material";
-import { DateButton, OtherDays } from "../../components";
-import { chooseDayContainer } from "../../styled/ChooseDayStyles/ChooseDayStyles";
+import { Container } from '@mui/material';
+import { DateButton, OtherDays } from '../../components';
+import { chooseDayContainer } from '../../styled/ChooseDayStyles/ChooseDayStyles';
+import { sizes } from '../../GlobalStyles';
+
 
 const ChooseDay = () => {
     const [dates, setDates] = useState([]);
-    const [isSelected, setIsSelected] = useState("");
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const today = new Date();
         const endDate = addMonths(today, 1);
         const datesArray = eachDayOfInterval({ start: today, end: endDate });
-        
+
         const formattedDates = datesArray.map(date => format(date, 'dd MMMM'));
         setDates(formattedDates);
-        setIsSelected(formattedDates[0]);
-    }, []);
+        dispatch(setSelectedDay(formattedDates[0]))
+    }, [dispatch]);
 
     useEffect(() => {
         const handleResize = () => {
@@ -31,29 +36,26 @@ const ChooseDay = () => {
         };
     }, []);
 
-    const changeSelected = (e) => {
-        setIsSelected(e.target.id);
+    const changeSelected = (btnClickEvent) => {
+        dispatch(setSelectedDay(btnClickEvent.target.id))
     };
 
     return (
         <Container
             sx={chooseDayContainer}
         >
-            {windowWidth >= 820 ? (
+            {windowWidth >= sizes.windowWidthChangeBtns ? (
                 <>
                     {dates.slice(0, 7).map((el, index) => (
                         <DateButton
                             key={index}
                             id={el}
                             title={el}
-                            isSelected={isSelected}
-                            onClick={changeSelected}
+                            onClick={(btnClickEvent) => changeSelected(btnClickEvent)}
                         />
                     ))}
                     <OtherDays
                         dates={dates}
-                        isSelected={isSelected}
-                        changeSelected={changeSelected}
                     />
                 </>
             ) : (
@@ -62,8 +64,7 @@ const ChooseDay = () => {
                         key={index}
                         id={el}
                         title={el}
-                        isSelected={isSelected}
-                        onClick={changeSelected}
+                        onClick={(btnClickEvent) => changeSelected(btnClickEvent)}
                     />
                 ))
             )}

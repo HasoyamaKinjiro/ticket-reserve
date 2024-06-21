@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "@mui/material";
-import DateButtonStyles from "../../../styled/ChooseDayStyles/DateButtonStyles";
+import React, { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
+import { useSelector } from 'react-redux';
+import DateButtonStyles from '../styled/ChooseDayStyles/DateButtonStyles';
 
-const DateButton = ({ title, id, onClick, isSelected, sx }) => {
+const DateButton = ({ title, id, onClick, sx }) => {
     const [isFocused, setIsFocused] = useState(false);
+    const selectedDay = useSelector((state) => state.chooseDayState.selectedDay)
 
     useEffect(() => {
-        if (id && id === isSelected) {
+        if (id && id === selectedDay) {
             setIsFocused(true);
         } else {
             setIsFocused(false);
         }
-    }, [id, isSelected]);
+    }, [id, selectedDay]);
 
     return (
         <Button

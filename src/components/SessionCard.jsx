@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import { createPortal } from "react-dom";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setMovie, setPopUpIsOpen, setPopUpTime } from '../store/reservationMovie';
+import { createPortal } from 'react-dom';
+import { useNavigate } from 'react-router-dom/dist';
 import {
     Grid,
     Card,
@@ -7,49 +10,55 @@ import {
     CardContent,
     Typography,
     CardActions,
-    Button,
-    Box
-} from "@mui/material";
+    Button
+} from '@mui/material';
 import {
-    boxBlurStyles,
     boxStyle,
     buttonTimeStyle,
     cardActionsTime,
-    sessionCardStyle
-} from "../../../styled/SessionsStyles/SessionCardStyles";
-import { SessionPopUp } from "../../../components";
+    sessionCardMedia,
+    sessionCardStyle,
+    sessionCardTitle
+} from '../styled/SessionsStyles/SessionCardStyles';
+import { SessionPopUp } from '../components';
 
-const portal = document.getElementById("session-popup-portal");
+const portal = document.getElementById('session-popup-portal');
 
 const SessionCard = ({ movie }) => {
-    const timeStamp = ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"];
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [popUpTime, setPopUpTime] = useState("");
+    const timeStamp = ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00'];
+    const isPopupOpen = useSelector((state) => state.reservationMovieState.popUpIsOpen)
 
-    const openPopUpReservation = (e) => {
-        setIsPopupOpen(true);
-        setPopUpTime(e.target.innerText);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (isPopupOpen) {
+            navigate('reservation');
+        }
+    }, [isPopupOpen, navigate]);
+
+    const openPopUpReservation = (btnClickEvent) => {
+        const time = btnClickEvent.target.innerText;
         document.body.style.overflow = 'hidden';
-    };
 
-    const closePopUpReservation = () => {
-        setIsPopupOpen(false);
-        document.body.style.overflow = 'auto';
+        dispatch(setPopUpIsOpen(true));
+        dispatch(setMovie(movie));
+        dispatch(setPopUpTime(time));
     };
 
     return (
         <>
-            <Grid item sm={6} md={4} >
+            <Grid item sm={6} md={4}>
                 <Card sx={sessionCardStyle}>
                     <CardMedia
-                        sx={{ height: "var(--film-img-height)", width: "var(--film-img-width)" }}
+                        sx={sessionCardMedia}
                         image={movie.posterUrl}
                         title={movie.title}
                     />
                     <div style={boxStyle}>
                         <CardContent>
                             <Typography
-                                sx={{ textAlign: "center" }}
+                                sx={sessionCardTitle}
                                 gutterBottom
                                 variant="h6"
                                 component="div"
@@ -66,7 +75,7 @@ const SessionCard = ({ movie }) => {
                                         <Button
                                             size="small"
                                             sx={buttonTimeStyle}
-                                            onClick={(e) => openPopUpReservation(e)}
+                                            onClick={(btnClickEvent) => openPopUpReservation(btnClickEvent)}
                                         >
                                             {time}
                                         </Button>
@@ -78,12 +87,7 @@ const SessionCard = ({ movie }) => {
                 </Card>
             </Grid>
             {isPopupOpen && portal && createPortal(
-                <Box
-                    sx={boxBlurStyles}
-                    onClick={closePopUpReservation}
-                >
-                    <SessionPopUp movie={movie} time={popUpTime} close={closePopUpReservation}/>
-                </Box>,
+                <SessionPopUp/>,
                 portal
             )}
         </>
