@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Icon } from '@mui/material';
 import { LocalActivity } from '@mui/icons-material';
+
 import { appBarHeader, toolbarHeader, ticketIconHeader } from '../styled/HeaderStyles';
 
 const Header = () => (

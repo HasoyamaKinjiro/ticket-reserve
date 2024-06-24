@@ -7,6 +7,9 @@ const DateButtonStyles = (isFocused, sx) => ({
     '&:hover': {
         backgroundColor: globalColors.secondaryPurple
     },
+    '&:focus': {
+        backgroundColor: globalColors.primaryPurple
+    },
     ...sx
 });
 

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Box, List, ListItem, ListItemText } from '@mui/material';
+
 import { DateButton } from '../components';
 import {
     listStyles,
@@ -9,19 +10,29 @@ import {
     dateButtonOtherDays,
     primaryTypographyStylesOtherDays
 } from '../styled/ChooseDayStyles/OtherDaysStyles';
-import { setSelectedDay } from '../store/chooseDay';
+import { setSelectedDay } from '../redux/ducks/chooseDay';
 
 const OtherDays = ({ dates }) => {
     const [otherDays, setOtherDays] = useState(false);
     const [buttonId, setButtonId] = useState(null);
+    const buttonRef = useRef(null);
     const listRef = useRef(null);
 
     const dispatch = useDispatch();
 
+    const handleButtonClick = () => {
+        setOtherDays(!otherDays)
+    }
+
     const handleClick = (listItemClickEvent) => {
-        //Need more think
-        setButtonId(listItemClickEvent.target.id);
-        dispatch(setSelectedDay(listItemClickEvent.target.id));
+        if (listItemClickEvent.currentTarget === listItemClickEvent.target) {
+            setButtonId(listItemClickEvent.target.id);
+            dispatch(setSelectedDay(listItemClickEvent.target.id));
+        }
+        else {
+            setButtonId(listItemClickEvent.target.innerText);
+            dispatch(setSelectedDay(listItemClickEvent.target.innerText));
+        }
         setOtherDays(false);
     };
 
@@ -29,11 +40,12 @@ const OtherDays = ({ dates }) => {
         if (
             listRef.current &&
             !listRef.current.contains(mouseEvent.target) &&
-            listRef.current &&
-            !listRef.current.contains(mouseEvent.target)
+            buttonRef.current &&
+            !buttonRef.current.contains(mouseEvent.target)
         ) {
             setOtherDays(false);
         }
+
     };
 
     useEffect(() => {
@@ -54,19 +66,20 @@ const OtherDays = ({ dates }) => {
                 sx={dateButtonOtherDays}
                 id={buttonId}
                 title="Choose day"
-                onClick={() => setOtherDays(!otherDays)}
+                onClick={handleButtonClick}
+                ref={buttonRef}
             />
             {otherDays && (
                 <List sx={listStyles} ref={listRef}>
-                    {dates.slice(7).map((el, index) => (
+                    {dates.slice(7).map((date, index) => (
                         <ListItem
-                            id={el}
+                            id={date}
                             key={index + 11}
                             sx={listItemStyles}
                             onClick={(listItemClickEvent) => handleClick(listItemClickEvent)}
                         >
                             <ListItemText
-                                primary={el}
+                                primary={date}
                                 primaryTypographyProps={primaryTypographyStylesOtherDays}
                             />
                         </ListItem>

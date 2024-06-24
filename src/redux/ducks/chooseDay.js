@@ -1,4 +1,4 @@
-export const SET_SELECTED_DAY = 'chooseDay/SET_SELECTED_DAY';
+const SET_SELECTED_DAY = 'chooseDay/SET_SELECTED_DAY';
 
 const initialState = {
     selectedDay: ''
@@ -20,4 +20,3 @@ export const setSelectedDay = (day) => ({
     type: SET_SELECTED_DAY,
     payload: day
 });
-

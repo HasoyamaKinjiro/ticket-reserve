@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom/dist';
 import { CircularProgress, Container, Typography } from '@mui/material';
+
 import { ChooseDay, Sessions } from '../components';
-import { fetchMovies } from '../store/movies';
+import { fetchMovies } from '../redux/ducks/movies';
 import { mainPageContainer, mainPageError } from '../styled/MainPageStyles';
 
 const MainPage = () => {

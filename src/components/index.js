@@ -9,7 +9,6 @@ import SessionCard from './SessionCard';
 import SessionPopUp from './SessionPopUp';
 import Sessions from '../containers/Sessions/Sessions';
 
-
 export {
     Header,
     Footer,

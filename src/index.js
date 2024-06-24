@@ -1,13 +1,14 @@
 import React from "react";
-import { Provider } from "react-redux";
-import store from "./store";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom/dist";
 import { ThemeProvider, createTheme } from "@mui/material";
+
+import store from "./redux/store";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { GlobalStyles } from "./GlobalStyles";
 
+import reportWebVitals from "./reportWebVitals";
 
 const theme = createTheme({
     palette: {

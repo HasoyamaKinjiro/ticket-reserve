@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setMovie, setPopUpIsOpen, setPopUpTime } from '../store/reservationMovie';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom/dist';
 import {
@@ -12,6 +11,7 @@ import {
     CardActions,
     Button
 } from '@mui/material';
+
 import {
     boxStyle,
     buttonTimeStyle,
@@ -21,6 +21,7 @@ import {
     sessionCardTitle
 } from '../styled/SessionsStyles/SessionCardStyles';
 import { SessionPopUp } from '../components';
+import { setMovie, setPopUpIsOpen, setPopUpTime } from '../redux/ducks/reservationMovie';
 
 const portal = document.getElementById('session-popup-portal');
 

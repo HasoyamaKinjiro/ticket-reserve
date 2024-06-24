@@ -11,6 +11,7 @@ import {
     Typography
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+
 import {
     boxFilmInfo,
     boxFilmInfoTypography,
@@ -24,17 +25,18 @@ import {
     sessionPopUpMedia, sessionPopUpReservationButton
 } from '../styled/SessionsStyles/SessionPopUpStyles';
 import { PopUpPlaceButton } from '../components';
-import { setPopUpIsOpen } from '../store/reservationMovie';
+import { setPopUpIsOpen } from '../redux/ducks/reservationMovie';
+
+const places = [
+    'Place 1', 'Place 2', 'Place 3', 'Place 4', 'Place 5',
+    'Place 6', 'Place 7', 'Place 8', 'Place 9', 'Place 10',
+    'Place 11', 'Place 12', 'Place 13', 'Place 14', 'Place 15',
+    'Place 16', 'Place 17', 'Place 18', 'Place 19', 'Place 20',
+    'Place 21', 'Place 22', 'Place 23', 'Place 24', 'Place 25',
+    'Place 26', 'Place 27', 'Place 28', 'Place 29', 'Place 30'
+];
 
 const SessionPopUp = () => {
-    const places = [
-        'Place 1', 'Place 2', 'Place 3', 'Place 4', 'Place 5',
-        'Place 6', 'Place 7', 'Place 8', 'Place 9', 'Place 10',
-        'Place 11', 'Place 12', 'Place 13', 'Place 14', 'Place 15',
-        'Place 16', 'Place 17', 'Place 18', 'Place 19', 'Place 20',
-        'Place 21', 'Place 22', 'Place 23', 'Place 24', 'Place 25',
-        'Place 26', 'Place 27', 'Place 28', 'Place 29', 'Place 30'
-    ];
     const movie = useSelector((state) => state.reservationMovieState.movie);
     const time = useSelector((state) => state.reservationMovieState.popUpTime);
 
@@ -66,8 +68,8 @@ const SessionPopUp = () => {
         >
             <Card
                 sx={cardStyles}
-                onClick={e => {
-                    e.stopPropagation()
+                onClick={mouseEvent => {
+                    mouseEvent.stopPropagation()
                 }}
             >
                 <Box

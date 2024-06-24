@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSelectedDay } from '../../store/chooseDay';
 import { format, addMonths, eachDayOfInterval } from 'date-fns';
 import { Container } from '@mui/material';
+
 import { DateButton, OtherDays } from '../../components';
 import { chooseDayContainer } from '../../styled/ChooseDayStyles/ChooseDayStyles';
+import { setSelectedDay } from '../../redux/ducks/chooseDay';
 import { sizes } from '../../GlobalStyles';
-
 
 const ChooseDay = () => {
     const [dates, setDates] = useState([]);
@@ -46,11 +46,11 @@ const ChooseDay = () => {
         >
             {windowWidth >= sizes.windowWidthChangeBtns ? (
                 <>
-                    {dates.slice(0, 7).map((el, index) => (
+                    {dates.slice(0, 7).map((date, index) => (
                         <DateButton
                             key={index}
-                            id={el}
-                            title={el}
+                            id={date}
+                            title={date}
                             onClick={(btnClickEvent) => changeSelected(btnClickEvent)}
                         />
                     ))}
@@ -59,11 +59,11 @@ const ChooseDay = () => {
                     />
                 </>
             ) : (
-                dates.map((el, index) => (
+                dates.map((date, index) => (
                     <DateButton
                         key={index}
-                        id={el}
-                        title={el}
+                        id={date}
+                        title={date}
                         onClick={(btnClickEvent) => changeSelected(btnClickEvent)}
                     />
                 ))

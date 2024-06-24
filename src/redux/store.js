@@ -1,11 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { rootWatcher } from '../saga';
-import moviesReducer from './movies';
-import movieReducer from './reservationMovie';
-import chooseDayReducer from './chooseDay';
+import { all } from 'redux-saga/effects';
 
-const sagaMiddleware = createSagaMiddleware()
+import moviesReducer, { moviesWatcher } from './ducks/movies';
+import movieReducer from './ducks/reservationMovie';
+import chooseDayReducer from './ducks/chooseDay';
 
 const rootReducer = combineReducers({
     reservationMovieState: movieReducer,
@@ -13,8 +12,14 @@ const rootReducer = combineReducers({
     chooseDayState: chooseDayReducer
 });
 
+function* rootWatcher () {
+    yield all([
+        moviesWatcher()
+    ])
+}
+
+const sagaMiddleware = createSagaMiddleware()
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootWatcher)
 
 export default store;
-
-sagaMiddleware.run(rootWatcher)

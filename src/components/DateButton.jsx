@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 import { useSelector } from 'react-redux';
+
 import DateButtonStyles from '../styled/ChooseDayStyles/DateButtonStyles';
 
-const DateButton = ({ title, id, onClick, sx }) => {
+const DateButton = forwardRef(({ title, id, onClick, sx }, ref) => {
     const [isFocused, setIsFocused] = useState(false);
     const selectedDay = useSelector((state) => state.chooseDayState.selectedDay)
 
@@ -22,10 +23,11 @@ const DateButton = ({ title, id, onClick, sx }) => {
             variant="contained"
             sx={DateButtonStyles(isFocused, sx)}
             onClick={onClick}
+            ref={ref}
         >
             {title}
         </Button>
     );
-};
+});
 
 export default DateButton;
