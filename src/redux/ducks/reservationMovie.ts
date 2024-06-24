@@ -1,6 +1,14 @@
+import { Movie } from '../../types';
+
 const SET_MOVIE = 'reservationMovie/SET_MOVIE';
 const SET_POPUP_IS_OPEN = 'reservationMovie/SET_POPUP_TIME';
 const SET_POPUP_TIME = 'reservationMovie/SET_POPUP_TIME';
+
+export interface ReservationMovieState {
+    movie: null | Movie;
+    popUpIsOpen: boolean;
+    popUpTime: string;
+}
 
 const initialState = {
     movie: null,
@@ -8,7 +16,7 @@ const initialState = {
     popUpTime: ''
 };
 
-export default function movieReducer (state = initialState, action) {
+export default function reservationMovieReducer(state: ReservationMovieState = initialState, action: any) {
     switch (action.type) {
         case SET_MOVIE:
             return {
@@ -30,17 +38,17 @@ export default function movieReducer (state = initialState, action) {
     }
 };
 
-export const setMovie = (movie) => ({
+export const setMovie = (movie: Movie) => ({
     type: SET_MOVIE,
     payload: movie
 });
 
-export const setPopUpIsOpen = (bool) => ({
+export const setPopUpIsOpen = (bool: boolean) => ({
     type: SET_POPUP_IS_OPEN,
     payload: bool
 });
 
-export const setPopUpTime = (time) => ({
+export const setPopUpTime = (time: string) => ({
     type: SET_POPUP_TIME,
     payload: time
 });

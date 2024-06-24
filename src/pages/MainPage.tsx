@@ -6,12 +6,13 @@ import { CircularProgress, Container, Typography } from '@mui/material';
 import { ChooseDay, Sessions } from '../components';
 import { fetchMovies } from '../redux/ducks/movies';
 import { mainPageContainer, mainPageError } from '../styled/MainPageStyles';
+import { State } from '../redux/store';
 
 const MainPage = () => {
     const dispatch = useDispatch();
-    const movies = useSelector((state) => state.moviesState.movies);
-    const loading = useSelector((state) => state.moviesState.loading);
-    const error = useSelector((state) => state.moviesState.error);
+    const movies = useSelector((state: State) => state.moviesState.movies);
+    const loading = useSelector((state: State) => state.moviesState.loading);
+    const error = useSelector((state: State) => state.moviesState.error);
 
     useEffect(() => {
         dispatch(fetchMovies())

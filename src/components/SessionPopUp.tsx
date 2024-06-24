@@ -24,8 +24,10 @@ import {
     sessionPopUpCloseButton,
     sessionPopUpMedia, sessionPopUpReservationButton
 } from '../styled/SessionsStyles/SessionPopUpStyles';
-import { PopUpPlaceButton } from '../components';
+import { PopUpPlaceButton } from './index';
 import { setPopUpIsOpen } from '../redux/ducks/reservationMovie';
+
+import { State } from '../redux/store';
 
 const places = [
     'Place 1', 'Place 2', 'Place 3', 'Place 4', 'Place 5',
@@ -37,8 +39,8 @@ const places = [
 ];
 
 const SessionPopUp = () => {
-    const movie = useSelector((state) => state.reservationMovieState.movie);
-    const time = useSelector((state) => state.reservationMovieState.popUpTime);
+    const movie = useSelector((state: State) => state.reservationMovieState.movie);
+    const time = useSelector((state: State) => state.reservationMovieState.popUpTime);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();

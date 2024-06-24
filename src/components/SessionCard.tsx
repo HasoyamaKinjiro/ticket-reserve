@@ -9,7 +9,8 @@ import {
     CardContent,
     Typography,
     CardActions,
-    Button
+    Button,
+    Box
 } from '@mui/material';
 
 import {
@@ -20,17 +21,24 @@ import {
     sessionCardStyle,
     sessionCardTitle
 } from '../styled/SessionsStyles/SessionCardStyles';
-import { SessionPopUp } from '../components';
+import { SessionPopUp } from './index';
 import { setMovie, setPopUpIsOpen, setPopUpTime } from '../redux/ducks/reservationMovie';
+
+import { Movie } from '../types';
+import { Dispatch, State } from '../redux/store';
 
 const portal = document.getElementById('session-popup-portal');
 
-const SessionCard = ({ movie }) => {
+interface SessionCardI {
+    movie: Movie
+}
+
+const SessionCard = ({ movie }: SessionCardI) => {
     const timeStamp = ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00'];
-    const isPopupOpen = useSelector((state) => state.reservationMovieState.popUpIsOpen)
+    const isPopupOpen = useSelector((state: State) => state.reservationMovieState.popUpIsOpen)
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    const dispatch: Dispatch = useDispatch();
 
     useEffect(() => {
         if (isPopupOpen) {
@@ -38,13 +46,17 @@ const SessionCard = ({ movie }) => {
         }
     }, [isPopupOpen, navigate]);
 
-    const openPopUpReservation = (btnClickEvent) => {
-        const time = btnClickEvent.target.innerText;
-        document.body.style.overflow = 'hidden';
+    const openPopUpReservation = (btnClickEvent: React.MouseEvent<HTMLElement>) => {
+        const target = btnClickEvent.target as HTMLElement | null;
 
-        dispatch(setPopUpIsOpen(true));
-        dispatch(setMovie(movie));
-        dispatch(setPopUpTime(time));
+        if (target && target.innerText) {
+            const time = target.innerText;
+            document.body.style.overflow = 'hidden';
+
+            dispatch(setPopUpIsOpen(true));
+            dispatch(setMovie(movie));
+            dispatch(setPopUpTime(time));
+        }
     };
 
     return (
@@ -56,7 +68,7 @@ const SessionCard = ({ movie }) => {
                         image={movie.posterUrl}
                         title={movie.title}
                     />
-                    <div style={boxStyle}>
+                    <Box sx={boxStyle}>
                         <CardContent>
                             <Typography
                                 sx={sessionCardTitle}
@@ -84,7 +96,7 @@ const SessionCard = ({ movie }) => {
                                 ))}
                             </Grid>
                         </CardActions>
-                    </div>
+                    </Box>
                 </Card>
             </Grid>
             {isPopupOpen && portal && createPortal(

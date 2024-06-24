@@ -1,6 +1,7 @@
 import { globalColors, sizes } from '../../GlobalStyles';
+import { SxProps, Theme } from '@mui/material';
 
-const DateButtonStyles = (isFocused, sx) => ({
+const DateButtonStyles = (isFocused: boolean, sx?: any) => ({
     width: sizes.dateButton.width,
     height: sizes.dateButton.height,
     backgroundColor: isFocused && globalColors.primaryPurple,

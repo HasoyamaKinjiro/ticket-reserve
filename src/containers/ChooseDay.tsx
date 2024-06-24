@@ -8,11 +8,14 @@ import { chooseDayContainer } from '../styled/ChooseDayStyles/ChooseDayStyles';
 import { setSelectedDay } from '../redux/ducks/chooseDay';
 import { sizes } from '../GlobalStyles';
 
-const ChooseDay = () => {
-    const [dates, setDates] = useState([]);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+import { Dispatch } from '../redux/store';
+import { Dates } from '../types';
 
-    const dispatch = useDispatch();
+const ChooseDay = () => {
+    const [dates, setDates] = useState<Dates>([]);
+    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+    const dispatch: Dispatch = useDispatch();
 
     useEffect(() => {
         const today = new Date();
@@ -36,8 +39,10 @@ const ChooseDay = () => {
         };
     }, []);
 
-    const changeSelected = (btnClickEvent) => {
-        dispatch(setSelectedDay(btnClickEvent.target.id))
+    const changeSelected = (btnClickEvent: React.MouseEvent<HTMLElement>) => {
+        if (btnClickEvent.target instanceof HTMLElement) {
+            dispatch(setSelectedDay(btnClickEvent.target.id));
+        }
     };
 
     return (
@@ -46,7 +51,7 @@ const ChooseDay = () => {
         >
             {windowWidth >= sizes.windowWidthChangeBtns ? (
                 <>
-                    {dates.slice(0, 7).map((date, index) => (
+                    {dates.slice(0, 7).map((date: string, index: number) => (
                         <DateButton
                             key={index}
                             id={date}
@@ -59,7 +64,7 @@ const ChooseDay = () => {
                     />
                 </>
             ) : (
-                dates.map((date, index) => (
+                dates.map((date: string, index: number) => (
                     <DateButton
                         key={index}
                         id={date}

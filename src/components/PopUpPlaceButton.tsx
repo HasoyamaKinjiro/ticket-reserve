@@ -3,7 +3,11 @@ import { Button, Tooltip } from '@mui/material';
 
 import PopUpPlaceButtonStyle from '../styled/SessionsStyles/PopUpPlaceButtonStyles';
 
-const PopUpPlaceButton = ({ place }) => {
+interface PopUpPlaceButtonI {
+    place: string;
+}
+
+const PopUpPlaceButton = ({ place }: PopUpPlaceButtonI) => {
     const [isButtonFocused, setIsButtonFocused] = useState(false);
 
     const handleButtonFocus = () => {
