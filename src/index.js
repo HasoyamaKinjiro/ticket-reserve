@@ -1,35 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { ThemeProvider, createTheme } from '@mui/material';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom/dist";
+import { ThemeProvider, createTheme } from "@mui/material";
 
+import store from "./redux/store";
+import App from "./App";
+import { GlobalStyles } from "./GlobalStyles";
+
+import reportWebVitals from "./reportWebVitals";
 
 const theme = createTheme({
     palette: {
-        mode: 'dark',
+        mode: "dark",
         secondary: {
-            main: '#121212',
-            secondary: '#ce93d8'
-        },
+            main: "#121212",
+            secondary: "var(--primary-purple)"
+        }
     },
     breakpoints: {
         values: {
-            xs: 0,
-            sm: 600,
-            md: 960,
+            xs: 400,
+            sm: 820,
+            md: 1260,
             lg: 1280,
-            xl: 1920,
+            xl: 1920
         }
     }
 })
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <ThemeProvider theme={theme}>
-        <App />
-    </ThemeProvider>
+    <>
+        <Provider store={store}>
+            <GlobalStyles/>
+            <ThemeProvider theme={theme}>
+                <Router>
+                    <App/>
+                </Router>
+            </ThemeProvider>
+        </Provider>
+    </>
 );
 
 // If you want to start measuring performance in your app, pass a function
