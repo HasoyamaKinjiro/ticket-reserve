@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 import { format, addMonths, eachDayOfInterval } from 'date-fns';
 import { Container } from '@mui/material';
 
-import { DateButton, OtherDays } from '../../components';
-import { chooseDayContainer } from '../../styled/ChooseDayStyles/ChooseDayStyles';
-import { setSelectedDay } from '../../redux/ducks/chooseDay';
-import { sizes } from '../../GlobalStyles';
+import { DateButton, OtherDays } from '../components';
+import { chooseDayContainer } from '../styled/ChooseDayStyles/ChooseDayStyles';
+import { setSelectedDay } from '../redux/ducks/chooseDay';
+import { sizes } from '../GlobalStyles';
 
 const ChooseDay = () => {
     const [dates, setDates] = useState([]);

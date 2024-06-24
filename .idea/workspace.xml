@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8a14ca6-0125-4cdf-9e88-a159858ada63" name="Changes" comment="corrections according to the review, add redux redux-saga router">
-      <change afterPath="$PROJECT_DIR$/src/redux/ducks/movies.js" afterDir="false" />
+    <list default="true" id="e8a14ca6-0125-4cdf-9e88-a159858ada63" name="Changes" comment="corrections according to the review, fix bug with ChooseDay btns">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DateButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DateButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GeneralLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GeneralLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OtherDays.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OtherDays.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopUpPlaceButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopUpPlaceButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SessionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SessionCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SessionPopUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SessionPopUp.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ChooseDay/ChooseDay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ChooseDay/ChooseDay.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Sessions/Sessions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Sessions/Sessions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/moviesSaga.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/chooseDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/chooseDay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/movies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reservationMovie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/reservationMovie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/ChooseDayStyles/DateButtonStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/ChooseDayStyles/DateButtonStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ChooseDay/ChooseDay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ChooseDay.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Sessions/Sessions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Sessions.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +73,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web\WebstormProjects\ticket-reserve\src\containers" />
       <recent name="D:\Web\WebstormProjects\ticket-reserve\src\redux" />
       <recent name="D:\Web\WebstormProjects\ticket-reserve\src\redux\ducks" />
       <recent name="D:\Web\WebstormProjects\ticket-reserve\src\components" />
@@ -113,7 +96,7 @@
       <workItem from="1718943311429" duration="2897000" />
       <workItem from="1718946780241" duration="24267000" />
       <workItem from="1718971622980" duration="999000" />
-      <workItem from="1719205564869" duration="8953000" />
+      <workItem from="1719205564869" duration="10129000" />
     </task>
     <task id="LOCAL-00001" summary="add popUp component and do some changes in others">
       <created>1718806080411</created>
@@ -143,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718971729603</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="corrections according to the review, fix bug with ChooseDay btns">
+      <created>1719214829322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719214829322</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +167,8 @@
     <MESSAGE value="change readme" />
     <MESSAGE value="PR corrections according to the review" />
     <MESSAGE value="corrections according to the review, add redux redux-saga router" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrections according to the review, add redux redux-saga router" />
+    <MESSAGE value="corrections according to the review, fix bug with ChooseDay btns" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrections according to the review, fix bug with ChooseDay btns" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
 
-import { SessionCard } from '../../components';
-import { sessionsGrid } from '../../styled/SessionsStyles/SessionsStyles';
+import { SessionCard } from '../components';
+import { sessionsGrid } from '../styled/SessionsStyles/SessionsStyles';
 
 const Sessions = ({ movies }) => (
     <Container>
