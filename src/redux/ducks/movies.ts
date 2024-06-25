@@ -8,19 +8,27 @@ const SET_MOVIES = 'movies/SET_MOVIES';
 const FETCH_MOVIES = 'movies/FETCH_MOVIES';
 const FETCH_MOVIES_FAILED = 'movies/FETCH_MOVIES_FAILED';
 
-export interface MoviesState {
+interface MoviesState {
     movies: Movie[];
     loading: boolean;
-    error: null | string;
+    error: string | null;
 }
 
-const initialState = {
+type MoviesAction =
+    | { type: typeof SET_MOVIES; payload: Movie[] }
+    | { type: typeof FETCH_MOVIES }
+    | { type: typeof FETCH_MOVIES_FAILED; payload: string };
+
+const initialState: MoviesState = {
     movies: [],
     loading: false,
     error: null
 };
 
-export default function moviesReducer(state: MoviesState = initialState, action: any) {
+export default function moviesReducer(
+    state = initialState
+    , action: MoviesAction
+): MoviesState {
     switch (action.type) {
         case FETCH_MOVIES:
             return {
@@ -46,12 +54,12 @@ export default function moviesReducer(state: MoviesState = initialState, action:
     }
 };
 
-export const setMovies = (movies: Movie[]) => ({
+export const setMovies = (movies: Movie[]): MoviesAction  => ({
     type: SET_MOVIES,
     payload: movies
 });
 
-export const fetchMovies = () => ({
+export const fetchMovies = (): MoviesAction  => ({
     type: FETCH_MOVIES
 });
 

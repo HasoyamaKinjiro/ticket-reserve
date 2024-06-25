@@ -1,11 +1,12 @@
 import { globalColors, mediaSizes, sizes } from '../../GlobalStyles';
+import { Theme } from '@mui/material';
 
 const sessionPopUpBackdrop = {
     background: globalColors.boxBlurBackground,
     backdropFilter: 'blur(3px)'
 };
 
-const cardStyles = (theme) => ({
+const cardStyles = (theme: Theme) => ({
     width: sizes.sessionPopupCard.width,
     height: sizes.sessionPopupCard.height,
     padding: '0 24px',
@@ -28,7 +29,7 @@ const sessionPopUpBox = {
     display: 'flex'
 };
 
-const sessionPopUpMedia = (theme) => ({
+const sessionPopUpMedia = (theme: Theme) => ({
     height: sizes.filmImg.height,
     width: sizes.filmImg.width,
     [theme.breakpoints.down('xs')]: {
@@ -37,7 +38,7 @@ const sessionPopUpMedia = (theme) => ({
     }
 });
 
-const cardActionsPlaceBtns = (theme) => ({
+const cardActionsPlaceBtns = (theme: Theme) => ({
     padding: 0,
     display: 'grid',
     gridTemplateColumns: 'repeat(10, 1fr)',

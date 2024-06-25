@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Outlet } from 'react-router-dom/dist';
+import { Outlet } from 'react-router-dom';
 import { CircularProgress, Container, Typography } from '@mui/material';
 
 import { ChooseDay, Sessions } from '../components';

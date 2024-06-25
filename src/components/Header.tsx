@@ -5,7 +5,7 @@ import { LocalActivity } from '@mui/icons-material';
 import { appBarHeader, toolbarHeader, ticketIconHeader } from '../styled/HeaderStyles';
 
 const Header = () => (
-    <AppBar position="static" sx={appBarHeader}>
+    <AppBar position="static" sx={appBarHeader} role="banner">
         <Toolbar sx={toolbarHeader}>
             <Typography variant="h6">Ticket reserve</Typography>
             <Icon color="inherit" sx={ticketIconHeader}>

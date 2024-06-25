@@ -1,44 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8a14ca6-0125-4cdf-9e88-a159858ada63" name="Changes" comment="delete redundant folders">
-      <change afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    <list default="true" id="e8a14ca6-0125-4cdf-9e88-a159858ada63" name="Changes" comment="corrections according to the review, fix bug with ChooseDay btns">
+      <change afterPath="$PROJECT_DIR$/src/jest.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/components/DateButton.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/components/Footer.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/components/GeneralLayout.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/components/__snapshots__/DateButton.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/components/__snapshots__/Footer.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/components/__snapshots__/GeneralLayout.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GlobalStyles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/GlobalStyles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/fetchMovies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/fetchMovies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DateButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DateButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GeneralLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GeneralLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OtherDays.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OtherDays.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopUpPlaceButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopUpPlaceButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SessionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SessionCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SessionPopUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SessionPopUp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ChooseDay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ChooseDay.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Sessions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Sessions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ducks/chooseDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/chooseDay.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ducks/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/movies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ducks/reservationMovie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/reservationMovie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/ChooseDayStyles/ChooseDayStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/ChooseDayStyles/ChooseDayStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/ChooseDayStyles/DateButtonStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/ChooseDayStyles/DateButtonStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/ChooseDayStyles/OtherDaysStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/ChooseDayStyles/OtherDaysStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/FooterStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/FooterStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/HeaderStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/HeaderStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/MainPageStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/SessionsStyles/PopUpPlaceButtonStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/SessionsStyles/PopUpPlaceButtonStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionCardStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionCardStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionPopUpStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionPopUpStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionsStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GeneralLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GeneralLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SessionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SessionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SessionPopUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SessionPopUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ducks/chooseDay.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/chooseDay.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ducks/movies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/movies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ducks/reservationMovie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ducks/reservationMovie.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styled/ChooseDayStyles/DateButtonStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/ChooseDayStyles/DateButtonStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styled/SessionsStyles/PopUpPlaceButtonStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/SessionsStyles/PopUpPlaceButtonStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionCardStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionCardStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionPopUpStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled/SessionsStyles/SessionPopUpStyles.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,27 +79,32 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2i3PCGON2fpfFtwm6JVIMbrZ3TM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Web/WebstormProjects/ticket-reserve&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Web\\WebstormProjects\\ticket-reserve\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Web/WebstormProjects/test21212",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs.jest.jest_package": "D:/Web/WebstormProjects/ticket-reserve-1/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
+    "ts.external.directory.path": "D:\\Web\\WebstormProjects\\ticket-reserve-1\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Web\WebstormProjects\ticket-reserve\src\containers" />
@@ -115,6 +112,22 @@
       <recent name="D:\Web\WebstormProjects\ticket-reserve\src\redux\ducks" />
       <recent name="D:\Web\WebstormProjects\ticket-reserve\src\components" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.All Tests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -137,6 +150,8 @@
       <workItem from="1719216194075" duration="812000" />
       <workItem from="1719217036326" duration="770000" />
       <workItem from="1719217819357" duration="15544000" />
+      <workItem from="1719294606727" duration="9212000" />
+      <workItem from="1719304266673" duration="12717000" />
     </task>
     <task id="LOCAL-00001" summary="add popUp component and do some changes in others">
       <created>1718806080411</created>
@@ -203,6 +218,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add popUp component and do some changes in others" />
     <MESSAGE value="change readme" />
     <MESSAGE value="PR corrections according to the review" />

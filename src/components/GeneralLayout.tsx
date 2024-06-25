@@ -1,12 +1,14 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom/dist';
+import { Outlet } from 'react-router-dom';
 
 import { Header, Footer } from './index';
 
 const GeneralLayout = () => (
     <div>
         <Header/>
-        <Outlet/>
+        <main role="main">
+            <Outlet/>
+        </main>
         <Footer/>
     </div>
 );

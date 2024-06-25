@@ -1,19 +1,19 @@
 const SET_SELECTED_DAY = 'chooseDay/SET_SELECTED_DAY';
 
-export interface ChooseDayState {
+interface ChooseDayState {
     selectedDay: string;
 }
 
-interface ChooseDayAction {
-    type: string;
-    payload?: any;
+type ChooseDayAction = {
+    type: typeof SET_SELECTED_DAY;
+    payload: string;
 }
 
-const initialState = {
+const initialState: ChooseDayState = {
     selectedDay: ''
 };
 
-export default function chooseDayReducer(state: ChooseDayState = initialState, action: ChooseDayAction) {
+export default function chooseDayReducer(state = initialState, action: ChooseDayAction): ChooseDayState {
     switch (action.type) {
         case SET_SELECTED_DAY:
             return {
@@ -25,7 +25,7 @@ export default function chooseDayReducer(state: ChooseDayState = initialState, a
     }
 };
 
-export const setSelectedDay = (day: string) => ({
+export const setSelectedDay = (day: string): ChooseDayAction => ({
     type: SET_SELECTED_DAY,
     payload: day
 });

@@ -1,6 +1,7 @@
 import { globalColors, mediaSizes, sizes } from '../../GlobalStyles';
+import { Theme } from '@mui/material';
 
-const sessionCardStyle = (theme) => ({
+const sessionCardStyle = (theme: Theme) => ({
     maxWidth: '400px',
     height: 'auto',
     display: 'flex',
@@ -13,7 +14,7 @@ const sessionCardStyle = (theme) => ({
     }
 });
 
-const sessionCardMedia = (theme) => ({
+const sessionCardMedia = (theme: Theme) => ({
     height: sizes.filmImg.height,
     width: sizes.filmImg.width,
     [theme.breakpoints.down('xs')]: {

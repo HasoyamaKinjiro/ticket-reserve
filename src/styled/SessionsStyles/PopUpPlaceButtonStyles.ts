@@ -1,6 +1,6 @@
 import { globalColors } from '../../GlobalStyles';
 
-const PopUpPlaceButtonStyle = (isButtonFocused) => ({
+const PopUpPlaceButtonStyle = (isButtonFocused: boolean) => ({
     minWidth: 8,
     width: 32,
     height: 40,

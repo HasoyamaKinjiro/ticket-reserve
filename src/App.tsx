@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom/dist';
+import { Route, Routes } from 'react-router-dom';
 import { GeneralLayout, SessionPopUp } from './components';
 import MainPage from './pages/MainPage';
 

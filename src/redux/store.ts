@@ -1,16 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware, {  } from 'redux-saga';
 import { all } from 'redux-saga/effects';
 
-import moviesReducer, { MoviesState, moviesWatcher } from './ducks/movies';
-import reservationMovieReducer, { ReservationMovieState } from './ducks/reservationMovie';
-import chooseDayReducer, { ChooseDayState } from './ducks/chooseDay';
-
-/*interface RootState {
-    reservationMovieState: ReservationMovieState;
-    moviesState: MoviesState;
-    chooseDayState: ChooseDayState;
-}*/
+import moviesReducer, { moviesWatcher } from './ducks/movies';
+import reservationMovieReducer from './ducks/reservationMovie';
+import chooseDayReducer from './ducks/chooseDay';
 
 const rootReducer = combineReducers({
     reservationMovieState: reservationMovieReducer,
@@ -24,11 +18,20 @@ function* rootWatcher() {
     ])
 }
 
+export type State = ReturnType<typeof rootReducer>;
+export type Dispatch = typeof store.dispatch;
+
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+const store= createStore(rootReducer, applyMiddleware(sagaMiddleware) as any);
 sagaMiddleware.run(rootWatcher)
 
 export default store;
 
-export type State = ReturnType<typeof rootReducer>;
-export type Dispatch = typeof store.dispatch
+
+
+
+/*interface RootState {
+    /!*reservationMovieState: (state: ReservationMovieState | undefined, action: ReservationMovieAction) => ReservationMovieState;
+    moviesState: (state: MoviesState | undefined, action: MoviesAction) => MoviesState;*!/
+    chooseDayState: (state: ChooseDayState | undefined, action: ChooseDayAction) => ChooseDayState;
+}*/
