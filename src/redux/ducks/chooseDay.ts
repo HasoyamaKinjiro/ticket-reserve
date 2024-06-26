@@ -1,10 +1,10 @@
 const SET_SELECTED_DAY = 'chooseDay/SET_SELECTED_DAY';
 
-interface ChooseDayState {
+export interface ChooseDayState {
     selectedDay: string;
 }
 
-type ChooseDayAction = {
+export type ChooseDayAction = {
     type: typeof SET_SELECTED_DAY;
     payload: string;
 }

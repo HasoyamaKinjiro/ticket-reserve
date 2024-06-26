@@ -26,12 +26,3 @@ const store= createStore(rootReducer, applyMiddleware(sagaMiddleware) as any);
 sagaMiddleware.run(rootWatcher)
 
 export default store;
-
-
-
-
-/*interface RootState {
-    /!*reservationMovieState: (state: ReservationMovieState | undefined, action: ReservationMovieAction) => ReservationMovieState;
-    moviesState: (state: MoviesState | undefined, action: MoviesAction) => MoviesState;*!/
-    chooseDayState: (state: ChooseDayState | undefined, action: ChooseDayAction) => ChooseDayState;
-}*/

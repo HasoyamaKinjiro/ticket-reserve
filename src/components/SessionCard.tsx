@@ -47,15 +47,16 @@ const SessionCard = ({ movie }: SessionCardI) => {
     }, [isPopupOpen, navigate]);
 
     const openPopUpReservation = (btnClickEvent: React.MouseEvent<HTMLElement>) => {
+        dispatch(setPopUpIsOpen(true));
         const target = btnClickEvent.target as HTMLElement | null;
 
         if (target && target.innerText) {
             const time = target.innerText;
             document.body.style.overflow = 'hidden';
 
+            dispatch(setPopUpTime(time));
             dispatch(setPopUpIsOpen(true));
             dispatch(setMovie(movie));
-            dispatch(setPopUpTime(time));
         }
     };
 

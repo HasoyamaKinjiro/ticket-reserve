@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { GeneralLayout } from '../../components';
 
 describe('GeneralLayout', () => {
-    it('renders inner components ', function () {
+    it('renders inner components', function () {
         render(<GeneralLayout />);
 
         expect(screen.getByRole('banner')).toBeInTheDocument();

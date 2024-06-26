@@ -8,13 +8,13 @@ const SET_MOVIES = 'movies/SET_MOVIES';
 const FETCH_MOVIES = 'movies/FETCH_MOVIES';
 const FETCH_MOVIES_FAILED = 'movies/FETCH_MOVIES_FAILED';
 
-interface MoviesState {
+export interface MoviesState {
     movies: Movie[];
     loading: boolean;
     error: string | null;
 }
 
-type MoviesAction =
+export type MoviesAction =
     | { type: typeof SET_MOVIES; payload: Movie[] }
     | { type: typeof FETCH_MOVIES }
     | { type: typeof FETCH_MOVIES_FAILED; payload: string };

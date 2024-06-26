@@ -27,7 +27,7 @@ import {
 import { PopUpPlaceButton } from './index';
 import { setPopUpIsOpen } from '../redux/ducks/reservationMovie';
 
-import { State } from '../redux/store';
+import { Dispatch, State } from '../redux/store';
 
 const places = [
     'Place 1', 'Place 2', 'Place 3', 'Place 4', 'Place 5',
@@ -43,7 +43,7 @@ const SessionPopUp = () => {
     const time = useSelector((state: State) => state.reservationMovieState.popUpTime);
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    const dispatch: Dispatch = useDispatch();
 
     useEffect(() => {
         if (!movie) {
@@ -107,7 +107,7 @@ const SessionPopUp = () => {
                         sx={cardActionsPlaceBtns}
                     >
                         {
-                            places.map((place, index) => (
+                            places.map((place: string, index: number) => (
                                 <PopUpPlaceButton key={index} place={place}/>
                             ))
                         }

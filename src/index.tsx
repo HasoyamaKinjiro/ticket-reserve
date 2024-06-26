@@ -1,20 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
-import { ThemeProvider, createTheme } from "@mui/material";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material';
 
-import store from "./redux/store";
-import App from "./App";
+import store from './redux/store';
+import App from './App';
 import { GlobalStyles } from './GlobalStyles';
 
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from './reportWebVitals';
 
 const theme = createTheme({
     palette: {
-        mode: "dark",
+        mode: 'dark',
         secondary: {
-            main: "#121212"
+            main: '#121212'
         }
     },
     breakpoints: {
@@ -28,7 +28,7 @@ const theme = createTheme({
     }
 })
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <>
         <Provider store={store}>

@@ -1,16 +1,16 @@
 import { Movie } from '../../types';
 
 const SET_MOVIE = 'reservationMovie/SET_MOVIE';
-const SET_POPUP_IS_OPEN = 'reservationMovie/SET_POPUP_TIME';
+const SET_POPUP_IS_OPEN = 'reservationMovie/SET_POPUP_IS_OPEN';
 const SET_POPUP_TIME = 'reservationMovie/SET_POPUP_TIME';
 
-interface ReservationMovieState {
+export interface ReservationMovieState {
     movie: null | Movie;
     popUpIsOpen: boolean;
     popUpTime: string;
 }
 
-type ReservationMovieAction = {
+export type ReservationMovieAction = {
     type: typeof SET_MOVIE | typeof SET_POPUP_IS_OPEN | typeof SET_POPUP_TIME;
     payload: any;
 }
@@ -27,20 +27,23 @@ export default function reservationMovieReducer(
 ): ReservationMovieState {
     switch (action.type) {
         case SET_MOVIE:
+            console.log('Setting movie:', action.payload);
             return {
                 ...state,
                 movie: action.payload
             };
-        case SET_POPUP_IS_OPEN:
-            return {
-                ...state,
-                popUpIsOpen: action.payload
-            }
         case SET_POPUP_TIME:
+            console.log('Setting popUpTime:', action.payload);
             return {
                 ...state,
                 popUpTime: action.payload
             };
+        case SET_POPUP_IS_OPEN:
+            console.log('Setting popUpIsOpen:', action.payload);
+            return {
+                ...state,
+                popUpIsOpen: action.payload
+            }
         default:
             return state;
     }

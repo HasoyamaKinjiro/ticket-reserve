@@ -20,7 +20,7 @@ interface OtherDaysI {
 
 const OtherDays = ({ dates }: OtherDaysI) => {
     const [otherDays, setOtherDays] = useState<boolean>(false);
-    const [buttonId, setButtonId] = useState<string>("initial");
+    const [buttonId, setButtonId] = useState<string>('initial');
     const buttonRef = useRef<HTMLButtonElement | null>(null);
     const listRef = useRef<HTMLUListElement | null>(null);
 
@@ -77,7 +77,7 @@ const OtherDays = ({ dates }: OtherDaysI) => {
             />
             {otherDays && (
                 <List sx={listStyles} ref={listRef}>
-                    {dates.slice(7).map((date, index) => (
+                    {dates.slice(7).map((date: string, index: number) => (
                         <ListItem
                             id={date}
                             key={index + 11}
