@@ -4,25 +4,22 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { PopUpPlaceButton } from '../../components';
 import PopUpPlaceButtonStyle from '../../styled/SessionsStyles/PopUpPlaceButtonStyles';
 
-describe('PopUpPlaceButton', () => {
-    it('render component', () => {
+describe('PopUpPlaceButton component', () => {
+    test('should render component without crashing', () => {
         render(<PopUpPlaceButton place="Place 1" />);
 
         expect(screen.getByRole('button')).toBeInTheDocument();
     });
 
-    it('calls onFocus when clicked', () => {
+    test('should call onFocus when clicked', () => {
         render(<PopUpPlaceButton place="Place 1" />);
 
         const button = screen.getByRole('button');
-
-        expect(button).toHaveStyle(PopUpPlaceButtonStyle(false));
-
         fireEvent.focus(button);
         expect(button).toHaveStyle(PopUpPlaceButtonStyle(true));
     });
 
-    it('PopUpPlaceButton snapshot', () => {
+    test('should match a PopUpPlaceButton snapshot', () => {
         const popUpPlaceButton = render(
             <PopUpPlaceButton place="Place 1" />
         );

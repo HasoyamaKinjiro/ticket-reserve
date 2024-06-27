@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainPage MainPage snapshot 1`] = `
+exports[`MainPage component should match a MainPage snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

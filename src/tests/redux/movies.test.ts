@@ -1,18 +1,18 @@
 import moviesReducer, { MoviesState, MoviesAction } from '../../redux/ducks/movies';
 import { Movie } from '../../types';
 
-describe('moviesReducer', () => {
+describe('moviesReducer duck', () => {
     const initialState: MoviesState = {
         movies: [],
         loading: false,
         error: null
     };
 
-    it('return the initial state', () => {
+    test('should return the initial state', () => {
         expect(moviesReducer(undefined, {} as MoviesAction)).toEqual(initialState);
     });
 
-    it('handle FETCH_MOVIES', () => {
+    test('should set loading to true and clear any errors when fetching movies', () => {
         const prevState = {
             movies: [],
             loading: false,
@@ -27,7 +27,7 @@ describe('moviesReducer', () => {
         });
     });
 
-    it('handle SET_MOVIES', () => {
+    test('should set movies and update loading to false when movies are fetched', () => {
         const prevState = {
             movies: [],
             loading: true,
@@ -51,7 +51,7 @@ describe('moviesReducer', () => {
         });
     });
 
-    it('handle FETCH_MOVIES_FAILED', () => {
+    test('should set loading to true and set any errors when fetching movie', () => {
         const prevState = {
             movies: [],
             loading: true,

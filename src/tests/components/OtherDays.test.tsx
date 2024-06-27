@@ -11,8 +11,8 @@ const dates = [
     '01 July', '02 July', '03 July', '04 July', '05 July'
 ]
 
-describe('OtherDays', () => {
-    it('render component', () => {
+describe('OtherDays component', () => {
+    test('should render component without crashing', () => {
         render(
             <Provider store={store}>
                 <OtherDays dates={dates} />
@@ -22,7 +22,7 @@ describe('OtherDays', () => {
         expect(screen.getByText(/Choose day/)).toBeInTheDocument();
     });
 
-    it('toggle list on button click', () => {
+    test('should shows list on button click', () => {
         render(
             <Provider store={store}>
                 <OtherDays dates={dates} />
@@ -32,11 +32,22 @@ describe('OtherDays', () => {
         const chooseDayBtn = screen.getByText(/Choose day/);
         fireEvent.click(chooseDayBtn);
         expect(screen.queryByRole('list')).toBeInTheDocument();
+    });
+
+    test('should hide list on button click when list is already shown', () => {
+        render(
+            <Provider store={store}>
+                <OtherDays dates={dates} />
+            </Provider>
+        );
+
+        const chooseDayBtn = screen.getByText(/Choose day/);
+        fireEvent.click(chooseDayBtn);
         fireEvent.click(chooseDayBtn);
         expect(screen.queryByRole('list')).not.toBeInTheDocument();
     });
 
-    it('closes list on outside click', () => {
+    test('should close the list on outside click', () => {
         render(
             <Provider store={store}>
                 <OtherDays dates={dates} />
@@ -45,12 +56,11 @@ describe('OtherDays', () => {
 
         const chooseDayBtn = screen.getByText(/Choose day/);
         fireEvent.click(chooseDayBtn);
-        expect(screen.queryByRole('list')).toBeInTheDocument();
         fireEvent.mouseUp(document);
         expect(screen.queryByRole('list')).not.toBeInTheDocument();
     });
 
-    it('OtherDays snapshot',  () => {
+    test('should match a OtherDays snapshot',  () => {
         const otherDays = render(
             <Provider store={store}>
                 <OtherDays dates={dates} />

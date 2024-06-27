@@ -28,8 +28,8 @@ const mockMovies = [
     }
 ];
 
-describe('Sessions', () => {
-    it('render component', () => {
+describe('Sessions container', () => {
+    test('should render container without crashing', () => {
         render(
             <Provider store={store}>
                 <Router>
@@ -41,7 +41,7 @@ describe('Sessions', () => {
         expect(screen.getByText(/Fight Club/)).toBeInTheDocument();
     });
 
-    it('Sessions snapshot', () => {
+    test('should match a Sessions snapshot', () => {
         const sessions = render(
             <Provider store={store}>
                 <Router>

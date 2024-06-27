@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sessions Sessions snapshot 1`] = `
+exports[`Sessions container should match a Sessions snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

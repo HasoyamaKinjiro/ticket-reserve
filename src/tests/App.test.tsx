@@ -7,8 +7,8 @@ import App from '../App';
 
 import store from '../redux/store';
 
-describe('App', () => {
-    it('render component', () => {
+describe('App component', () => {
+    test('should render component without crashing', () => {
         render(
             <Provider store={store}>
                 <Router>
@@ -17,12 +17,15 @@ describe('App', () => {
             </Provider>
         );
 
-        expect(screen.getByRole('banner')).toBeInTheDocument();
-        expect(screen.getByRole('main')).toBeInTheDocument();
-        expect(screen.getByRole('contentinfo')).toBeInTheDocument();
+        const rolesToCheck = ['banner', 'main', 'contentinfo'];
+
+        rolesToCheck.forEach(role => {
+            const elements = screen.queryAllByRole(role);
+            expect(elements).toHaveLength(1);
+        });
     });
 
-    it('App snapshot', () => {
+    test('should match a App snapshot', () => {
         const app = render(
             <Provider store={store}>
                 <Router>

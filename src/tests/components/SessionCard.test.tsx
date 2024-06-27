@@ -17,8 +17,8 @@ const movie = {
     "posterUrl": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
 }
 
-describe('SessionCard', () => {
-    it('render component', () => {
+describe('SessionCard component', () => {
+    test('should render component without crashing', () => {
         render(
             <Provider store={store}>
                 <Router>
@@ -30,7 +30,7 @@ describe('SessionCard', () => {
         expect(screen.getByText(/Inception/)).toBeInTheDocument();
     });
 
-    it('open popup on click', async () => {
+    test('should open popup on click', async () => {
         render(
             <Provider store={store}>
                 <Router>
@@ -40,16 +40,13 @@ describe('SessionCard', () => {
         );
 
         const timeBtn = screen.getByText('10:00');
-
-        expect(timeBtn).toBeInTheDocument();
-
         fireEvent.click(timeBtn);
         await waitFor(() => {
             expect(store.getState().reservationMovieState.popUpIsOpen).toBe(true);
         });
     });
 
-    it('SessionCard snapshot', () => {
+    test('should match a SessionCard snapshot', () => {
         const sessionCard = render(
             <Provider store={store}>
                 <Router>

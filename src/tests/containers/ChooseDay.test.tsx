@@ -6,13 +6,13 @@ import { ChooseDay } from '../../components';
 
 import store from '../../redux/store';
 
-describe('ChooseDay', () => {
+describe('ChooseDay container', () => {
     const resizeWindow = (width: number) => {
         window.innerWidth = width;
         window.dispatchEvent(new Event('resize'));
     };
 
-    it('render component with window width above threshold', () => {
+    test('should render component with window width above threshold', () => {
         resizeWindow(800);
 
         render(
@@ -24,7 +24,7 @@ describe('ChooseDay', () => {
         expect(screen.getByText(/Choose day/)).toBeInTheDocument();
     });
 
-    it('render component with window width below threshold', () => {
+    test('should render component with window width below threshold', () => {
         resizeWindow(600);
 
         render(
@@ -36,7 +36,7 @@ describe('ChooseDay', () => {
         expect(screen.queryByText(/Choose day/)).toBeNull();
     });
 
-    it('ChooseDay snapshot', () => {
+    test('should match a ChooseDay snapshot', () => {
         const chooseDay = render(
             <Provider store={store}>
                 <ChooseDay />

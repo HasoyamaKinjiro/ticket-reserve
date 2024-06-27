@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DateButton DateButton snapshot 1`] = `
+exports[`DateButton component should match a DateButton snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

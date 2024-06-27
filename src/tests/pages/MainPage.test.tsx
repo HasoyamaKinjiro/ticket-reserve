@@ -7,8 +7,8 @@ import MainPage from '../../pages/MainPage';
 
 import store from '../../redux/store';
 
-describe('MainPage', () => {
-    it('render component', () => {
+describe('MainPage component', () => {
+    test('should render component without crashing', () => {
         render(
             <Provider store={store}>
                 <Router>
@@ -20,7 +20,7 @@ describe('MainPage', () => {
         expect(screen.getByRole('progressbar')).toBeInTheDocument();
     });
 
-    it('MainPage snapshot', () => {
+    test('should match a MainPage snapshot', () => {
         const mainPage = render(
             <Provider store={store}>
                 <Router>

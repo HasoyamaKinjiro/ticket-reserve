@@ -1,13 +1,13 @@
 import chooseDayReducer, { setSelectedDay, ChooseDayAction } from '../../redux/ducks/chooseDay';
 
-describe('chooseDay', () => {
-    it('return the initial state', function () {
+describe('chooseDay duck', () => {
+    test('should return the initial state', function () {
         expect(chooseDayReducer(undefined, {} as ChooseDayAction)).toEqual({
             selectedDay: ''
         });
     });
 
-    it('handle SET_SELECTED_DAY', () => {
+    test('should update selected day in the state', () => {
         const prevState = {
             selectedDay: 'Monday'
         };

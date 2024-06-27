@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChooseDay ChooseDay snapshot 1`] = `
+exports[`ChooseDay container should match a ChooseDay snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -10,17 +10,6 @@ Object {
       >
         <button
           class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary css-1l6zjwl-MuiButtonBase-root-MuiButton-root"
-          id="26 June"
-          tabindex="0"
-          type="button"
-        >
-          26 June
-          <span
-            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </button>
-        <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary css-1107xb1-MuiButtonBase-root-MuiButton-root"
           id="27 June"
           tabindex="0"
           type="button"
@@ -349,6 +338,17 @@ Object {
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary css-1107xb1-MuiButtonBase-root-MuiButton-root"
+          id="27 July"
+          tabindex="0"
+          type="button"
+        >
+          27 July
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
       </div>
     </div>
   </body>,
@@ -358,17 +358,6 @@ Object {
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary css-1l6zjwl-MuiButtonBase-root-MuiButton-root"
-        id="26 June"
-        tabindex="0"
-        type="button"
-      >
-        26 June
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </button>
-      <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary css-1107xb1-MuiButtonBase-root-MuiButton-root"
         id="27 June"
         tabindex="0"
         type="button"
@@ -693,6 +682,17 @@ Object {
         type="button"
       >
         26 July
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSecondary css-1107xb1-MuiButtonBase-root-MuiButton-root"
+        id="27 July"
+        tabindex="0"
+        type="button"
+      >
+        27 July
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />

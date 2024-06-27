@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OtherDays OtherDays snapshot 1`] = `
+exports[`OtherDays component should match a OtherDays snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

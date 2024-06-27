@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GeneralLayout GeneralLayout snapshot  1`] = `
+exports[`GeneralLayout component should match a GeneralLayout snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

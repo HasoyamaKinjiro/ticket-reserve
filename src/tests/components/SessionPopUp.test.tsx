@@ -1,17 +1,14 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { AnyAction } from 'redux-saga';
-import { State } from '../../redux/store';
-import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
+import configureStore from 'redux-mock-store';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { SessionPopUp } from '../../components';
 
-
 const mockStore = configureStore([]);
 
-describe('SessionPopUp', () => {
+describe('SessionPopUp component', () => {
     let store: any;
 
     beforeEach(() => {
@@ -30,7 +27,7 @@ describe('SessionPopUp', () => {
         });
     });
 
-    it('render component', () => {
+    test('should render component without crashing', () => {
         render(
             <Provider store={store}>
                 <Router>
@@ -42,7 +39,7 @@ describe('SessionPopUp', () => {
         expect(screen.getByText(/Test Description/)).toBeInTheDocument();
     });
 
-    it('redirects if no movie is available', () => {
+    test('should redirect if no movie is available', () => {
         store = mockStore({
             reservationMovieState: {
                 movie: null,
@@ -61,7 +58,7 @@ describe('SessionPopUp', () => {
         expect(screen.queryByText('Reservation time:')).toBeNull();
     });
 
-    it('close popup on click', () => {
+    test('should close popup on click', () => {
         render(
             <Provider store={store}>
                 <Router>
@@ -74,7 +71,7 @@ describe('SessionPopUp', () => {
         expect(store.getActions()).toEqual([{ type: 'reservationMovie/SET_POPUP_IS_OPEN', payload: false }]);
     });
 
-    it('SessionPopUp snapshot', () => {
+    test('should match a SessionPopUp snapshot', () => {
         const sessionPopUp = render(
             <Provider store={store}>
                 <Router>

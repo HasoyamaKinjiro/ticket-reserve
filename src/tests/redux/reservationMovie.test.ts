@@ -6,18 +6,18 @@ import reservationMovieReducer, {
 } from '../../redux/ducks/reservationMovie';
 import { Movie } from '../../types';
 
-describe('reservationMovieReducer', () => {
+describe('reservationMovieReducer duck', () => {
     const initialState: ReservationMovieState = {
         movie: null,
         popUpIsOpen: false,
         popUpTime: ''
     };
 
-    it('should return the initial state', () => {
+    test('should return the initial state', () => {
         expect(reservationMovieReducer(undefined, {} as ReservationMovieAction)).toEqual(initialState);
     });
 
-    it('should handle SET_MOVIE', () => {
+    test('should set movie', () => {
         const mockMovie: Movie = {
             "title": "Fight Club",
             "genre": "Drama",
@@ -35,7 +35,7 @@ describe('reservationMovieReducer', () => {
         });
     });
 
-    it('should handle SET_POPUP_IS_OPEN', () => {
+    test('should update popUpIsOpen to true', () => {
         const action: ReservationMovieAction = setPopUpIsOpen(true);
 
         expect(reservationMovieReducer(initialState, action)).toEqual({
@@ -44,7 +44,7 @@ describe('reservationMovieReducer', () => {
         });
     });
 
-    it('should handle SET_POPUP_TIME', () => {
+    test('should set correct time', () => {
         const mockTime = '10:00';
         const action: ReservationMovieAction = setPopUpTime(mockTime);
 

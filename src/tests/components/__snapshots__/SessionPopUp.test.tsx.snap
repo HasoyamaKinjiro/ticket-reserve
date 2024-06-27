@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SessionPopUp SessionPopUp snapshot 1`] = `
+exports[`SessionPopUp component should match a SessionPopUp snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body

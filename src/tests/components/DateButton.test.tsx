@@ -7,8 +7,8 @@ import { DateButton } from '../../components';
 import store from '../../redux/store';
 import { globalColors } from '../../GlobalStyles';
 
-describe('DateButton', () => {
-    it('renders with correct title', () => {
+describe('DateButton component', () => {
+    test('should be rendered with the correct title', () => {
         render(
             <Provider store={store}>
                 <DateButton title="Test Button" id="1" />
@@ -18,7 +18,7 @@ describe('DateButton', () => {
         expect(screen.getByText('Test Button')).toBeInTheDocument();
     });
 
-    it('applies styles correctly when selected', () => {
+    test('should apply styles correctly when selected', () => {
         render(
             <Provider store={store}>
                 <DateButton title="Test Button" id="1" />
@@ -29,7 +29,7 @@ describe('DateButton', () => {
         expect(button).toHaveStyle(`background-color: ${globalColors.secondaryPurple}`);
     });
 
-    it('calls onClick handler when clicked', () => {
+    test('should call the onClick handler when clicked', () => {
         const handleClick = jest.fn();
         render(
             <Provider store={store}>
@@ -42,7 +42,7 @@ describe('DateButton', () => {
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
 
-    it('DateButton snapshot', () => {
+    test('should match a DateButton snapshot', () => {
         const dateButton = render(
             <Provider store={store}>
                 <DateButton title="Test Button" id="1" />
