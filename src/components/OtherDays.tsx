@@ -27,7 +27,7 @@ const OtherDays = ({ dates }: OtherDaysI) => {
     const dispatch = useDispatch();
 
     const handleButtonClick = () => {
-        setOtherDays(!otherDays)
+        setOtherDays(!otherDays);
     }
 
     const handleClick = (listItemClickEvent: React.MouseEvent<HTMLElement>) => {
