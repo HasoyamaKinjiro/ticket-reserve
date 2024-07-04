@@ -17,6 +17,17 @@ const theme = createTheme({
             main: '#121212'
         }
     },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+
+                    color: 'rgba(255, 255, 255, 0.87) !important'
+
+                }
+            }
+        }
+    },
     breakpoints: {
         values: {
             xs: 400,
