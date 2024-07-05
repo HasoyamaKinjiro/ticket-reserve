@@ -2,15 +2,16 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Header, Footer } from './index';
+import { Layout, Main } from '../styled/GeneralLayoutStyles';
 
 const GeneralLayout = () => (
-    <div>
+    <Layout>
         <Header/>
-        <main role="main">
+        <Main role="main">
             <Outlet/>
-        </main>
+        </Main>
         <Footer/>
-    </div>
+    </Layout>
 );
 
 export default GeneralLayout;
