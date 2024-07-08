@@ -5,7 +5,7 @@ import { CircularProgress, Container, Typography } from '@mui/material';
 
 import { ChooseDay, Sessions } from '../components';
 import { fetchMovies } from '../redux/ducks/movies';
-import { mainPageContainer, mainPageError } from '../styled/MainPageStyles';
+import { mainPageContainer, mainPageError } from '../styled/pages/MainPageStyles';
 import { State } from '../redux/store';
 
 const MainPage = () => {
