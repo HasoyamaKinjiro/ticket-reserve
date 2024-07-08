@@ -24,3 +24,5 @@ yarn-error.log*
 
 # Ignore IDE configuration folder
 .idea/
+
+*storybook.log

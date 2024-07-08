@@ -6,7 +6,7 @@ import DateButtonStyles from '../styled/ChooseDayStyles/DateButtonStyles';
 
 import { State } from '../redux/store';
 
-interface DateButtonProps {
+export interface DateButtonProps {
     title: string;
     id: string | undefined;
     onClick?: MouseEventHandler<HTMLButtonElement>;
