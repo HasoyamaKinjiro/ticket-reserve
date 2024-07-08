@@ -8,7 +8,7 @@ import store from './redux/store';
 import App from './App';
 import { GlobalStyles } from './GlobalStyles';
 
-const theme = createTheme({
+export const theme = createTheme({
     palette: {
         mode: 'dark',
         secondary: {
