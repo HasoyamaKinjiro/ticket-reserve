@@ -12,7 +12,7 @@ import {
 } from '@devexpress/dx-react-grid-material-ui';
 import { Paper, Box } from '@mui/material';
 
-import { boxTable, paperTable } from '../styled/TablePageStyles';
+import { boxTable, paperTable } from '../styled/pages/TablePageStyles';
 import { State } from '../redux/store';
 import { fetchMovies } from '../redux/ducks/movies';
 

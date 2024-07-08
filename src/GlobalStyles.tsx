@@ -27,7 +27,15 @@ const sizes = {
         height: '500px'
     },
     globalMarginBottom: '24px',
-    windowWidthChangeBtns: 800
+    windowWidthChangeBtns: 800,
+    chart: {
+        bar: {
+            width: 160
+        },
+        pageBox: {
+            width: '800px'
+        }
+    }
 };
 
 const mediaSizes = {

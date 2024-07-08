@@ -18,7 +18,12 @@ const boxTitle = {
     userSelect: 'none'
 }
 
-const ticketIconHeader = {
+const boxRightSideSection = {
+    display: 'flex',
+    gap: 4
+}
+
+const iconHeader = {
     ml: 1
 }
 
@@ -26,5 +31,6 @@ export {
     appBarHeader,
     toolbarHeader,
     boxTitle,
-    ticketIconHeader
+    boxRightSideSection,
+    iconHeader
 };

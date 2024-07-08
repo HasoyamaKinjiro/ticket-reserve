@@ -1,4 +1,4 @@
-import { sizes } from '../GlobalStyles';
+import { sizes } from '../../GlobalStyles';
 
 const boxTable = {
     display: 'flex',
